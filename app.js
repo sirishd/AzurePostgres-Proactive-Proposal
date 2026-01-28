@@ -52,7 +52,6 @@ function generateProposal() {
     ramGB: parseInt(document.getElementById('ramGB').value),
     storageType: document.getElementById('storageType').value,
     avgIOPS: parseInt(document.getElementById('avgIOPS').value) || 0,
-    workloadType: document.getElementById('workloadType').value,
     currentMonthlyCost: parseFloat(document.getElementById('currentMonthlyCost').value) || 0,
     companyName: document.getElementById('companyName').value,
     industry: document.getElementById('industry').value,
@@ -94,7 +93,7 @@ function calculateAzureRecommendation(data) {
     // Memory Optimized provides 8GB per vCore
     vCores = Math.max(2, Math.ceil(data.ramGB / 8));
     ramGB = vCores * 8;
-  } else if (data.workloadType === 'olap' || ramPerCore > 4) {
+  } else if (ramPerCore > 4) {
     tier = 'generalPurpose';
     // General Purpose provides 4GB per vCore
     vCores = Math.max(2, Math.ceil(data.ramGB / 4));
@@ -257,7 +256,7 @@ function displayProposal(data, recommendation, costs, timeline) {
     <p>This proposal outlines a comprehensive migration strategy to move ${data.companyName}'s PostgreSQL databases to Azure Database for PostgreSQL. 
     The migration will modernize your database infrastructure, enhance security and reliability, and ${savingsText}.</p>
     <p>We recommend migrating to Azure Database for PostgreSQL <strong>${recommendation.tierName}</strong> tier, 
-    which will provide ${recommendation.vCores} vCores and ${recommendation.ramGB}GB RAM to support your ${data.workloadType.toUpperCase()} workload. 
+    which will provide ${recommendation.vCores} vCores and ${recommendation.ramGB}GB RAM to support your workload. 
     The estimated migration timeline is <strong>${timeline.totalMonths} months</strong>.</p>
   `;
 
