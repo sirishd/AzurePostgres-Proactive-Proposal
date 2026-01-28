@@ -584,6 +584,12 @@ p {
   margin-bottom: var(--spacing-xl);
 }
 
+.proposal-header .text-muted {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-base);
+  margin-top: var(--spacing-sm);
+}
+
 .proposal-section {
   margin-bottom: var(--spacing-2xl);
 }
@@ -643,15 +649,87 @@ p {
   }
 
   .proposal-header {
-    background: none;
-    border: 2px solid #000;
+    background: linear-gradient(135deg, #e0f2fe 0%, #ddd6fe 50%, #e0e7ff 100%);
+    border: 2px solid #334155;
+    padding: var(--spacing-xl);
+    margin-bottom: var(--spacing-lg);
+    page-break-after: avoid;
+  }
+
+  .proposal-header h1 {
+    color: #1e293b !important;
+    -webkit-text-fill-color: #1e293b !important;
+    font-size: 1.75rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .proposal-header p {
+    color: #475569 !important;
+    margin: var(--spacing-xs) 0;
+  }
+
+  .proposal-header .text-muted {
+    color: #64748b !important;
+    font-size: 0.875rem;
   }
 
   h1,
   h2,
   h3 {
-    color: black;
-    -webkit-text-fill-color: black;
+    color: #1e293b;
+    -webkit-text-fill-color: #1e293b;
+  }
+
+  h2 {
+    background: none;
+    color: #2563eb !important;
+    -webkit-text-fill-color: #2563eb !important;
+    page-break-after: avoid;
+  }
+
+  .card {
+    display: block !important;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+    box-shadow: none;
+    page-break-inside: avoid;
+  }
+
+  .proposal-section {
+    page-break-inside: avoid;
+  }
+
+  .stats-grid,
+  .comparison-table {
+    page-break-inside: avoid;
+  }
+
+  .stat-card {
+    border: 1px solid #cbd5e1;
+    background: #f8fafc;
+  }
+
+  .stat-value {
+    background: none;
+    color: #2563eb !important;
+    -webkit-text-fill-color: #2563eb !important;
+  }
+
+  .comparison-table {
+    border: 1px solid #cbd5e1;
+  }
+
+  .comparison-table th {
+    background: #f1f5f9;
+    color: #1e293b;
+    border-bottom: 2px solid #cbd5e1;
+  }
+
+  .comparison-table td {
+    border-bottom: 1px solid #e2e8f0;
   }
 }
 
