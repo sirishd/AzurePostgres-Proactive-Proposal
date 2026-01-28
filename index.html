@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Generate professional migration proposals for PostgreSQL to Azure Database for PostgreSQL">
+  <meta name="keywords" content="PostgreSQL, Azure, Database Migration, Cloud Migration, Proposal Generator">
+  <title>PostgreSQL to Azure Migration Proposal Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="header-content">
+      <h1>Migrate PostgreSQL Anywhere to Azure Database for PostgreSQL</h1>
+      <p>Directional Business Case</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container">
+    <div class="main-content">
+
+      <!-- Assessment Form -->
+      <div id="assessmentForm">
+        <div class="card">
+          <div class="card-header">
+            <div class="card-icon">📊</div>
+            <div>
+              <h3 class="card-title">Database Assessment</h3>
+              <p class="text-muted" style="margin: 0; font-size: 0.875rem;">Tell us about your current PostgreSQL
+                infrastructure</p>
+            </div>
+          </div>
+
+          <form id="migrationForm">
+            <!-- Current Infrastructure -->
+            <div class="form-section">
+              <h4 class="form-section-title">Current Infrastructure</h4>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label" for="dbSize">
+                    Total Database Size (GB) <span class="required">*</span>
+                  </label>
+                  <input type="number" id="dbSize" name="dbSize" class="form-input" placeholder="500" min="1" required>
+                  <span class="form-helper">Combined size of all databases</span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="dbCount">
+                    Number of Databases <span class="required">*</span>
+                  </label>
+                  <input type="number" id="dbCount" name="dbCount" class="form-input" placeholder="5" min="1" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="cpuCores">
+                    CPU Cores <span class="required">*</span>
+                  </label>
+                  <input type="number" id="cpuCores" name="cpuCores" class="form-input" placeholder="8" min="1"
+                    required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="ramGB">
+                    RAM (GB) <span class="required">*</span>
+                  </label>
+                  <input type="number" id="ramGB" name="ramGB" class="form-input" placeholder="32" min="1" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="storageType">
+                    Storage Type <span class="required">*</span>
+                  </label>
+                  <select id="storageType" name="storageType" class="form-select" required>
+                    <option value="">Select storage type</option>
+                    <option value="hdd">HDD</option>
+                    <option value="ssd">SSD</option>
+                    <option value="nvme">NVMe SSD</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="avgIOPS">
+                    Average IOPS
+                  </label>
+                  <input type="number" id="avgIOPS" name="avgIOPS" class="form-input" placeholder="5000" min="0">
+                  <span class="form-helper">Leave blank if unknown</span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="workloadType">
+                    Workload Type <span class="required">*</span>
+                  </label>
+                  <select id="workloadType" name="workloadType" class="form-select" required>
+                    <option value="">Select workload type</option>
+                    <option value="oltp">OLTP (Transactional)</option>
+                    <option value="olap">OLAP (Analytical)</option>
+                    <option value="mixed">Mixed Workload</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="currentMonthlyCost">
+                    Current Monthly Cost ($)
+                  </label>
+                  <input type="number" id="currentMonthlyCost" name="currentMonthlyCost" class="form-input"
+                    placeholder="5000" min="0">
+                  <span class="form-helper">Infrastructure + maintenance costs</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Business Information -->
+            <div class="form-section">
+              <h4 class="form-section-title">Business Information</h4>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label class="form-label" for="companyName">
+                    Company Name <span class="required">*</span>
+                  </label>
+                  <input type="text" id="companyName" name="companyName" class="form-input"
+                    placeholder="Acme Corporation" required>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="industry">
+                    Industry
+                  </label>
+                  <input type="text" id="industry" name="industry" class="form-input" placeholder="E-commerce">
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="azureRegion">
+                    Preferred Azure Region <span class="required">*</span>
+                  </label>
+                  <select id="azureRegion" name="azureRegion" class="form-select" required>
+                    <option value="">Select region</option>
+                    <option value="eastus">East US</option>
+                    <option value="eastus2">East US 2</option>
+                    <option value="westus">West US</option>
+                    <option value="westus2">West US 2</option>
+                    <option value="centralus">Central US</option>
+                    <option value="northeurope">North Europe</option>
+                    <option value="westeurope">West Europe</option>
+                    <option value="southeastasia">Southeast Asia</option>
+                    <option value="eastasia">East Asia</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="migrationUrgency">
+                    Migration Timeline
+                  </label>
+                  <select id="migrationUrgency" name="migrationUrgency" class="form-select">
+                    <option value="standard">Standard (3-6 months)</option>
+                    <option value="accelerated">Accelerated (1-3 months)</option>
+                    <option value="urgent">Urgent (&lt;1 month)</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="button-group">
+              <button type="submit" class="btn btn-primary btn-large">
+                <span>Generate Proposal</span>
+                <span>→</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- Proposal Output -->
+      <div id="proposalOutput" class="proposal-output">
+        <!-- Proposal Header -->
+        <div class="proposal-header">
+          <h1 id="proposalTitle">Migration Proposal</h1>
+          <p id="proposalSubtitle">PostgreSQL to Azure Database for PostgreSQL</p>
+          <p class="text-muted" id="proposalDate"></p>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="card proposal-section">
+          <h2 class="proposal-section-title">Executive Summary</h2>
+          <p id="executiveSummary"></p>
+        </div>
+
+        <!-- Current State Assessment -->
+        <div class="card proposal-section">
+          <h2 class="proposal-section-title">Current State Assessment</h2>
+          <div class="stats-grid" id="currentStateStats"></div>
+        </div>
+
+        <!-- Azure Recommendation -->
+        <div class="card proposal-section">
+          <h2 class="proposal-section-title">Azure Recommendation</h2>
+          <div id="azureRecommendation"></div>
+          <div class="stats-grid mt-lg" id="azureSpecs"></div>
+        </div>
+
+        <!-- Cost Analysis -->
+        <div class="card proposal-section">
+          <h2 class="proposal-section-title">Cost Analysis</h2>
+          <div class="stats-grid" id="costStats"></div>
+          <table class="comparison-table mt-lg">
+            <thead>
+              <tr>
+                <th>Cost Component</th>
+                <th>Current (On-Prem)</th>
+                <th>Azure Database</th>
+                <th>Difference</th>
+              </tr>
+            </thead>
+            <tbody id="costComparison"></tbody>
+          </table>
+        </div>
+
+        <!-- Migration Roadmap -->
+        <div class="card proposal-section">
+          <h2 class="proposal-section-title">Migration Roadmap</h2>
+          <div class="timeline" id="migrationTimeline"></div>
+        </div>
+
+        <!-- Key Benefits -->
+        <div class="card proposal-section">
+          <h2 class="proposal-section-title">Key Benefits</h2>
+          <div id="keyBenefits"></div>
+        </div>
+
+        <!-- Next Steps -->
+        <div class="card proposal-section">
+          <h2 class="proposal-section-title">Next Steps</h2>
+          <div id="nextSteps"></div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="button-group">
+          <button onclick="downloadPDF()" class="btn btn-primary btn-large">
+            <span>📥</span>
+            <span>Download PDF</span>
+          </button>
+          <button onclick="window.print()" class="btn btn-secondary btn-large">
+            <span>📄</span>
+            <span>Print</span>
+          </button>
+          <button onclick="resetForm()" class="btn btn-secondary btn-large">
+            <span>←</span>
+            <span>Create New Proposal</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
