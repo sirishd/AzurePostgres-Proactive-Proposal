@@ -45,7 +45,8 @@
                   <label class="form-label" for="dbSize">
                     Total Database Size (GB) <span class="required">*</span>
                   </label>
-                  <input type="number" id="dbSize" name="dbSize" class="form-input" placeholder="500" min="1" required>
+                  <input type="number" id="dbSize" name="dbSize" class="form-input" placeholder="500" value="500"
+                    min="1" required>
                   <span class="form-helper">Combined size of all databases</span>
                 </div>
 
@@ -53,22 +54,24 @@
                   <label class="form-label" for="dbCount">
                     Number of Databases <span class="required">*</span>
                   </label>
-                  <input type="number" id="dbCount" name="dbCount" class="form-input" placeholder="5" min="1" required>
+                  <input type="number" id="dbCount" name="dbCount" class="form-input" placeholder="5" value="5" min="1"
+                    required>
                 </div>
 
                 <div class="form-group">
                   <label class="form-label" for="cpuCores">
                     CPU Cores <span class="required">*</span>
                   </label>
-                  <input type="number" id="cpuCores" name="cpuCores" class="form-input" placeholder="8" min="1"
-                    required>
+                  <input type="number" id="cpuCores" name="cpuCores" class="form-input" placeholder="8" value="8"
+                    min="1" required>
                 </div>
 
                 <div class="form-group">
                   <label class="form-label" for="ramGB">
                     RAM (GB) <span class="required">*</span>
                   </label>
-                  <input type="number" id="ramGB" name="ramGB" class="form-input" placeholder="32" min="1" required>
+                  <input type="number" id="ramGB" name="ramGB" class="form-input" placeholder="32" value="32" min="1"
+                    required>
                 </div>
 
                 <div class="form-group">
@@ -78,7 +81,7 @@
                   <select id="storageType" name="storageType" class="form-select" required>
                     <option value="">Select storage type</option>
                     <option value="hdd">HDD</option>
-                    <option value="ssd">SSD</option>
+                    <option value="ssd" selected>SSD</option>
                     <option value="nvme">NVMe SSD</option>
                   </select>
                 </div>
@@ -87,7 +90,8 @@
                   <label class="form-label" for="avgIOPS">
                     Average IOPS
                   </label>
-                  <input type="number" id="avgIOPS" name="avgIOPS" class="form-input" placeholder="5000" min="0">
+                  <input type="number" id="avgIOPS" name="avgIOPS" class="form-input" placeholder="5000" value="5000"
+                    min="0">
                   <span class="form-helper">Leave blank if unknown</span>
                 </div>
 
@@ -97,7 +101,7 @@
                     Current Monthly Cost ($)
                   </label>
                   <input type="number" id="currentMonthlyCost" name="currentMonthlyCost" class="form-input"
-                    placeholder="5000" min="0">
+                    placeholder="5000" value="5000" min="0">
                   <span class="form-helper">Infrastructure + maintenance costs</span>
                 </div>
               </div>
@@ -112,14 +116,15 @@
                     Company Name <span class="required">*</span>
                   </label>
                   <input type="text" id="companyName" name="companyName" class="form-input"
-                    placeholder="Acme Corporation" required>
+                    placeholder="Acme Corporation" value="Acme Corporation" required>
                 </div>
 
                 <div class="form-group">
                   <label class="form-label" for="industry">
                     Industry
                   </label>
-                  <input type="text" id="industry" name="industry" class="form-input" placeholder="E-commerce">
+                  <input type="text" id="industry" name="industry" class="form-input" placeholder="E-commerce"
+                    value="E-commerce">
                 </div>
 
                 <div class="form-group">
@@ -128,7 +133,7 @@
                   </label>
                   <select id="azureRegion" name="azureRegion" class="form-select" required>
                     <option value="">Select region</option>
-                    <option value="eastus">East US</option>
+                    <option value="eastus" selected>East US</option>
                     <option value="eastus2">East US 2</option>
                     <option value="westus">West US</option>
                     <option value="westus2">West US 2</option>
