@@ -585,8 +585,16 @@ p {
   margin-bottom: var(--spacing-xl);
 }
 
+.proposal-header h1 {
+  color: white;
+}
+
+.proposal-header p {
+  color: white;
+}
+
 .proposal-header .text-muted {
-  color: var(--color-text-secondary);
+  color: rgba(255, 255, 255, 0.9);
   font-size: var(--font-size-base);
   margin-top: var(--spacing-sm);
 }
