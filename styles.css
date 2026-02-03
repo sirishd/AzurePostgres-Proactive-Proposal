@@ -176,11 +176,12 @@ p {
   margin-bottom: var(--spacing-sm);
   font-size: var(--font-size-4xl);
   font-weight: 800;
+  color: white;
 }
 
 .header p {
   font-size: var(--font-size-lg);
-  color: var(--color-text-secondary);
+  color: white;
   max-width: 600px;
   margin: 0 auto;
 }
