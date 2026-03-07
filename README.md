@@ -30,7 +30,7 @@ Simply open the application in your browser and:
 
 ## Live Demo
 
-Visit the live application: [https://sirishd.github.io/postgres-migration-proposal/](https://sirishd.github.io/postgres-migration-proposal/)
+Visit the live application: [https://sirishd.github.io/AzurePostgres-Proactive-Proposal/](https://sirishd.github.io/AzurePostgres-Proactive-Proposal/)
 
 ## Local Development
 
